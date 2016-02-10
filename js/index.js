@@ -93,7 +93,7 @@ Test.prototype._ping = function () {
 
 Test.prototype._resolvePing = function (update) {
     var times = this._latencies;
-    times.push(Date.now() - this._lastPing);
+    times.push((Date.now() - this._lastPing) / 2);
     var average = times.reduce(function (a, b) { return a + b; }, 0) / times.length;
 
     update(undefined, average);
