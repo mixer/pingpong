@@ -24,15 +24,16 @@ var (
 	location     = flag.String("location", "", "Human-readable name where the server lives.")
 	publicIngest = flag.String("publicIngest", "", "This ingest's public address to be stored in etcd.")
 
-	etcdDir   = flag.String("etcdDir", "/ingests", "Directory in etcd for storing pingping hosts. If empty, etcd heartbeats will not be enabled.")
-	etcdAddrs = flag.String("etcdAddr", "http://127.0.0.1:2379", "List of comma-delimited etcd hosts.")
-	etcdTtl   = flag.Duration("etcdTtl", 10*time.Second, "Heartbeat TTL for this host in etcd.")
+	etcdEnabled = flag.Bool("etcd", false, "Whether to enable discovery via etcd")
+	etcdDir     = flag.String("etcdDir", "/ingests", "Directory in etcd for storing pingping hosts. If empty, etcd heartbeats will not be enabled.")
+	etcdAddrs   = flag.String("etcdAddr", "http://127.0.0.1:2379", "List of comma-delimited etcd hosts.")
+	etcdTtl     = flag.Duration("etcdTtl", 10*time.Second, "Heartbeat TTL for this host in etcd.")
 )
 
 func main() {
 	flag.Parse()
 
-	if *etcdDir != "" {
+	if *etcdEnabled {
 		data, err := json.Marshal(struct {
 			Ping     string `json:"ping"`
 			Ingest   string `json:"ingest"`

@@ -24,7 +24,7 @@ function PingPong(ingests) {
 PingPong.prototype.test = function (callback) {
     this._tests = this._ingests.map(function (ingest) {
         var data;
-        try { data = JSON.parse(ingest.value); } catch (e) { return; }
+        try { data = JSON.parse(ingest.value); } catch (e) { /* ignored */ }
 
         return new Test(data).start(function (err, latency) {
             data.err = err;
