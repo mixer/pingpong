@@ -21,8 +21,8 @@ node {
             stage("go build") {
                 sh "go build ./bin/${projectName}"
             }
-            stage("deploy") {
-                sh "/var/lib/jenkins/beambuild/go_deploy.sh './${projectName}' '${projectName}'"
+            stage("artifacts") {
+                archiveArtifacts artifacts: "${projectName}", fingerprint: true
             }
             currentBuild.result = "SUCCESS"
         }
