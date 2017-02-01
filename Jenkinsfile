@@ -22,7 +22,7 @@ node {
                 sh "go build ./bin/${projectName}"
             }
             stage("artifacts") {
-                archiveArtifacts artifacts: "${projectName}", fingerprint: true
+                archiveArtifacts artifacts: "${projectName}", fingerprint: false
             }
             currentBuild.result = "SUCCESS"
         }
