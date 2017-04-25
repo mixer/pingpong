@@ -26,7 +26,28 @@ func Listen(address string, port int, cert, key string) {
 	if cert == "" {
 		err = http.ListenAndServe(addr, nil)
 	} else {
-		err = http.ListenAndServeTLS(addr, cert, key, nil)
+		cfg := &tls.Config{
+			MinVersion:               tls.VersionTLS10,
+			CurvePreferences:         []tls.CurveID{tls.CurveP521, tls.CurveP384, tls.CurveP256},
+			PreferServerCipherSuites: true,
+			CipherSuites: []uint16{
+				tls.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+				tls.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+				tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+				tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+				tls.TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384,
+				tls.TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256,
+				tls.TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384,
+				tls.TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,
+			},
+		}
+		srv := &http.Server{
+			Addr:         addr,
+			Handler:      pingpong,
+			TLSConfig:    cfg,
+			TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
+		}
+		err = srv.ListenAndServeTLS(cert, key)
 	}
 
 	panic(err)
