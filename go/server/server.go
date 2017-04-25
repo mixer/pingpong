@@ -1,6 +1,7 @@
 package server
 
 import (
+	"crypto/tls"
 	"fmt"
 	"net/http"
 	"time"
@@ -43,7 +44,7 @@ func Listen(address string, port int, cert, key string) {
 		}
 		srv := &http.Server{
 			Addr:         addr,
-			Handler:      pingpong,
+			Handler:      nil,
 			TLSConfig:    cfg,
 			TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
 		}
