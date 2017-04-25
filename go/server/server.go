@@ -56,6 +56,8 @@ func Listen(address string, port int, cert, key string) {
 // echo server. The client is allowed to send five packets for 10
 // seconds, being disconnected after whichever comes first.
 func pingpong(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Strict-Transport-Security", "max-age=31536000")
+
 	c, err := upgrader.Upgrade(w, req, nil)
 	if err != nil {
 		return
