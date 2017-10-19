@@ -4,7 +4,7 @@ node ("master") {
     def projectName = "pingpong"
     
     def gopath = pwd() + "/gopath"
-    def projectDir = "${gopath}/src/github.com/WatchBeam/${projectName}"
+    def projectDir = "${gopath}/src/github.com/mixer/${projectName}"
 
     env.GOPATH = "${gopath}"
     env.PATH = env.PATH + ":${gopath}/bin"
