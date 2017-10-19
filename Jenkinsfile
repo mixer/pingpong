@@ -16,7 +16,7 @@ node {
                 checkout scm
             }
             stage("Prepare") {
-                sh 'go get -d ./...'
+                sh 'go get -u ./...'
             }
             stage("go build") {
                 sh "go build ./bin/${projectName}"
