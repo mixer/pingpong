@@ -1,6 +1,6 @@
 properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactNumToKeepStr: '2', numToKeepStr: '2']]])
 
-node {
+node ("master") {
     def projectName = "pingpong"
     
     def gopath = pwd() + "/gopath"
@@ -16,7 +16,7 @@ node {
                 checkout scm
             }
             stage("Prepare") {
-                sh 'go get -u ./...'
+                sh 'go get -d ./...'
             }
             stage("go build") {
                 sh "go build ./bin/${projectName}"
