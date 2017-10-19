@@ -4,8 +4,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/WatchBeam/etcbeat"
 	etcd "github.com/coreos/etcd/client"
+	"github.com/mixer/etcbeat"
 )
 
 func Start(addresses string, key, value string) error {

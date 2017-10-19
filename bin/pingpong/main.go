@@ -9,8 +9,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/WatchBeam/pingpong/go/beats"
-	"github.com/WatchBeam/pingpong/go/server"
+	"github.com/mixer/pingpong/go/beats"
+	"github.com/mixer/pingpong/go/server"
 )
 
 var (
