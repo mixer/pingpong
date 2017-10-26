@@ -2,7 +2,7 @@ properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', 
 
 node ("master") {
     def projectName = "pingpong"
-    
+
     def gopath = pwd() + "/gopath"
     def projectDir = "${gopath}/src/github.com/mixer/${projectName}"
 
@@ -16,7 +16,8 @@ node ("master") {
                 checkout scm
             }
             stage("Prepare") {
-                sh 'go get -d ./...'
+                sh 'go get github.com/kardianos/govendor'
+                sh 'govendor sync'
             }
             stage("go build") {
                 sh "go build ./bin/${projectName}"

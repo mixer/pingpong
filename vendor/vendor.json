@@ -1,0 +1,73 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "TKmBYGnpk/Ibn5Fl3VE2n9hUO/E=",
+			"path": "github.com/benbjohnson/clock",
+			"revision": "7dc76406b6d3c05b5f71a86293cbcf3c4ea03b19",
+			"revisionTime": "2016-12-15T17:48:38Z"
+		},
+		{
+			"checksumSHA1": "XtVAwbJWD12FGuZrIkxpe8t9TB8=",
+			"path": "github.com/coreos/etcd/client",
+			"revision": "20f2914e1301abde233b2039e110f2be57b91f89",
+			"revisionTime": "2017-10-26T00:52:00Z"
+		},
+		{
+			"checksumSHA1": "mKIXx1kDwmVmdIpZ3pJtRBuUKso=",
+			"path": "github.com/coreos/etcd/pkg/pathutil",
+			"revision": "20f2914e1301abde233b2039e110f2be57b91f89",
+			"revisionTime": "2017-10-26T00:52:00Z"
+		},
+		{
+			"checksumSHA1": "z+C4BtPa8wbOUKW5dmHyhNnTulg=",
+			"path": "github.com/coreos/etcd/pkg/srv",
+			"revision": "20f2914e1301abde233b2039e110f2be57b91f89",
+			"revisionTime": "2017-10-26T00:52:00Z"
+		},
+		{
+			"checksumSHA1": "gx1gJIMU6T0UNQ0bPZ/drQ8cpCI=",
+			"path": "github.com/coreos/etcd/pkg/types",
+			"revision": "20f2914e1301abde233b2039e110f2be57b91f89",
+			"revisionTime": "2017-10-26T00:52:00Z"
+		},
+		{
+			"checksumSHA1": "sp2FkEyaIGiQFOEZCTDkBZgyHOs=",
+			"path": "github.com/coreos/etcd/version",
+			"revision": "20f2914e1301abde233b2039e110f2be57b91f89",
+			"revisionTime": "2017-10-26T00:52:00Z"
+		},
+		{
+			"checksumSHA1": "97BsbXOiZ8+Kr+LIuZkQFtSj7H4=",
+			"path": "github.com/coreos/go-semver/semver",
+			"revision": "1817cd4bea52af76542157eeabd74b057d1a199e",
+			"revisionTime": "2017-06-13T09:22:38Z"
+		},
+		{
+			"checksumSHA1": "rNGJereenlgchMueLU9iBCyQDo8=",
+			"path": "github.com/gorilla/websocket",
+			"revision": "71fa72d4842364bc5f74185f4161e0099ea3624a",
+			"revisionTime": "2017-10-11T16:07:11Z"
+		},
+		{
+			"checksumSHA1": "SzOwPUvYyXK3tlAYfGb/RbvNmkc=",
+			"path": "github.com/mixer/etcbeat",
+			"revision": "d981250b8ca36b9a6007c2fa14a2684646ab4272",
+			"revisionTime": "2017-02-02T20:18:31Z"
+		},
+		{
+			"checksumSHA1": "D2Td0nXnQJmM5E19HKviqP+e1zg=",
+			"path": "github.com/ugorji/go/codec",
+			"revision": "16373bd7016380b084e8a4e8f9560efe82cbc98c",
+			"revisionTime": "2017-10-26T02:16:19Z"
+		},
+		{
+			"checksumSHA1": "GtamqiJoL7PGHsN454AoffBFMa8=",
+			"path": "golang.org/x/net/context",
+			"revision": "4b14673ba32bee7f5ac0f990a48f033919fd418b",
+			"revisionTime": "2017-09-15T10:16:46Z"
+		}
+	],
+	"rootPath": "github.com/mixer/pingpong"
+}

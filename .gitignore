@@ -60,3 +60,5 @@ _testmain.go
 *.test
 *.prof
 
+/pingpong
+/vendor/*/
